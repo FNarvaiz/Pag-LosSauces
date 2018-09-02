@@ -20,9 +20,11 @@ dim serverApp: serverApp = "front-end/main.asp"
 function renderMainMenu
   if getUsrData then
     %>
-    <center>
-    <table cellpadding="0" cellspacing="0" height="100%">
-    <tr>
+    <div id="espacio"></div>
+    <div onclick="menu()" class="menu_bar">
+      <span>Vecinos del los Lagos</span>
+    </div>
+    <ul id="navegador">
       <%
       dim labels
       labels = eval("mainMenuLabels" & lang)
@@ -30,26 +32,24 @@ function renderMainMenu
       for i = 0 to uBound(labels)
 '        if mainMenuContents(i) <> "classifieds" or usrName = "gbd" then
           %>
-          <td id="mainMenuOption<%= i %>" class="btn anchor" onclick="load(this, '<%= mainMenuContents(i) %>')"><%= labels(i) %></td>
-          <td class="interBtn">&nbsp;</td>
+          <li id="mainMenuOption<%= i %>" class="li" onclick="load(this, '<%= mainMenuContents(i) %>')"><%= labels(i) %></li>
+          
           <%
       next
       %>
-    </tr>
-    </table>
-    </center>
+    </ul>
     <%
   else
     %>
-    <table cellpadding="0" cellspacing="0" height="44">
-    <tr>
-      <td class="btn anchor" onclick="showLoginDialog()" id="loginMenuItem"><%= eval("loginMenuItem" & lang) %></td>
-      <td class="interBtn">&nbsp;</td>
-      <td class="btn anchor" onclick="load(this, 'registrationDialog')"><%= eval("registrationMenuItem" & lang) %></td>
-      <td class="interBtn">&nbsp;</td>
-      <td class="btn anchor" onclick="load(this, 'faq')"><%= eval("faqMenuItem" & lang) %></td>
-    </tr>
-    </table>
+    <div id="espacio"></div>
+    <div onclick="menu()" class="menu_bar">
+      <span>Vecinos del los Lagos</span>
+    </div>
+    <ul id="navegadorLogin">
+      <li class="btn anchor" onclick="showLoginDialog()" id="loginMenuItem"><%= eval("loginMenuItem" & lang) %></li>
+      <li class="btn anchor" onclick="load(this, 'registrationDialog')"><%= eval("registrationMenuItem" & lang) %></li>
+      <li class="btn anchor" onclick="load(this, 'faq')"><%= eval("faqMenuItem" & lang) %></li>
+    </ul>
     <%
   end if
 end function
@@ -101,7 +101,126 @@ function renderHome
       %>
     </table>
   </div>
-  <iframe id="schedule" src="contenidos/tableroInicio.html"></iframe>
+  <div id="schedule" >
+    <section class="days">
+      <h2>LUNES</h2>
+      <article class="activityFirst">
+        <h3 class="hour">8:30 - 10:15 </h3>
+        <p >
+          Yoga jovita- house
+(house cerrado - no reservas)
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">9:30 - 11:30</h3>
+        <p >
+           Yoga
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">10:30 - 11:30</h3>
+        <p >
+          Gym adultas-house
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">17:30 - 19:00</h3>
+        <p >
+           Tela peques - Galeria
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">17:30-18:30</h3>
+        <p >
+           Jazz nenas  Teens- House
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">18:30 - 19:30</h3>
+        <p >
+           Jazz adultas - House
+        </p>
+      </article>
+    </section>
+    <section class="days">
+      <h2>MARTES</h2>
+      <article class="activityFirst">
+        <h3 class="hour">19:00 - 20:00 </h3>
+        <p >
+         Gym teens adultas- House
+        </p>
+      </article>
+    </section>
+     <section class="days">
+      <h2>MIERCOLES</h2>
+      <article class="activityFirst">
+        <h3 class="hour">9:30 - 11:30 </h3>
+        <p >
+         Gym Vero - House
+        </p>
+      </article>
+       <article class="activityFirst">
+        <h3 class="hour">14:00 - 16:00 </h3>
+        <p >
+         Taller artes nenes - Sum
+        </p>
+      </article>
+    </section>
+     <section class="days">
+      <h2>JUEVES</h2>
+      <article class="activityFirst">
+        <h3 class="hour">8:30 - 10:15 </h3>
+        <p >
+         Tejido Solidario
+        </p>
+      </article>
+      <article class="activityFirst">
+        <h3 class="hour">17:30 - 19:00 </h3>
+        <p >
+         Telas nenas - Galeria
+        </p>
+      </article>
+      <article class="activityFirst">
+        <h3 class="hour">19:00 - 20:00</h3>
+        <p >
+         Gym teens adultas- House
+        </p>
+      </article>
+    </section>
+     <section class="days">
+      <h2>VIERNES</h2>
+      <article class="activityFirst">
+        <h3 class="hour">10:30 - 11:30 </h3>
+        <p >
+         Yoga jovita
+        </p>
+      </article>
+            <article class="activityFirst">
+        <h3 class="hour">18:00 - 19:00 </h3>
+        <p >
+         Zumba teens adultas
+        </p>
+      </article>
+    </section>
+    <section class="days">
+      <h2>SABADO</h2>
+      <article class="activityFirst">
+        <h3 class="hour">14:00 - 16:00 </h3>
+        <p >
+         Futbol
+        </p>
+      </article>
+    </section>
+     <section class="days">
+      <h2>DOMINGO</h2>
+      <article class="activityFirst">
+        <h3 class="hour">8:30 - 10:15 </h3>
+        <p >
+         House Abierto - No Reservas
+        </p>
+      </article>
+    </section>
+  </div>
   <%
   
   'if dbGetData("SELECT HTML FROM CONTENIDOS WHERE ID=10") then
@@ -115,7 +234,44 @@ function renderFAQ
   dim url: url = "contenidos/faq/faq.html"
   %>
   <div id="dynPanelBg"></div>
-  <iframe id="contentsPanel" src="<%= url %>"></iframe>
+  <div id="contentsPanel">
+    <div id="wrapper">
+      <div id="qs">
+        <h1><img src="contenidos/faq/signo.png" /> PREGUNTAS FRECUENTES</h1>
+        <table width="800" cellpadding="10" cellspacing="5" >
+          <tr>
+            <td width="50%" class="preg" valign="top">
+              <h2>Olvidé mi contraseña. ¿Cómo la recupero?</h2>
+              <p>Es común no recordar este tipo de cosas.<br>Para recuperarla, en la pantalla de ingreso al sistema 
+              hacé clic en “Olvidé mi contraseña”. Allí escribí el e-mail con el que te registraste, y el sistema te enviará la contraseña.</p>
+            </td>
+            <td class="preg" width="50%" valign="top">
+              <h2>Si poseo más de un lote, ¿puedo visualizar los datos de todos ellos a la vez?</h2>
+              <p>No. Cada usuario representa a un lote. Por ello, al poseer más de uno deberás ingresar de manera individual
+              para visualizar la información de cada uno.</p>
+            </td>
+          </tr>
+          
+          <tr>
+            <td colspan="1" class="preg" width="50%" valign="top">
+              <h2>No puedo ingresar al sistema. ¿Qué hago?</h2>
+              <p>Antes que nada asegúrate de ingresar correctamente tu e-mail y tu contraseña.
+              Si continúas experimentando problemas, por favor, ponete en contacto con nosotros.</p>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="1" class="preg" width="50%" valign="top">
+              <h2>¿Cómo cambio mi contraseña?</h2>
+              <p>Una vez que hayas ingresado al sistema, al pie de la pantalla hacé clic en “Cambiar contraseña”.
+              Luego ingresá tu contraseña actual y la nueva que hayas elegido.
+              Recordá que es aconsejable cambiar periódicamente la contraseña.</p>
+            </td>
+          </tr>
+          
+        </table>
+      </div>
+    </div>
+  </div>
   <div id="contactPanel">
     Envianos tu consulta a <a href="mailto:info@vecinosdelossauces.com.ar">info@vecinosdelossauces.com.ar</a><br>
     o mediante el siguiente formulario.
@@ -169,6 +325,67 @@ function renderAbout
   %>
   <div id="dynPanelBg"></div>
   <iframe id="aboutContentPanel" scrolling="no" src="<%= url %>"></iframe>
+  <div id="aboutResponsive">
+    <section id="tabla">
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/13.png"/>
+        <title>Indendente</title>
+        <p>Oscar Vega</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/3.png"/>
+        <title>Espacios Verdes y Medio Ambiente</title>
+        <p>Sandra Addiego, Andrea Regnicoli</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/1.png"/>
+        <title>Deportes</title>
+        <p>Alejandro Ramallo, Guillermo Balagna (Futbol), Juan Hormaechea (tenis)</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/2.png"/>
+        <title>Arquitectura</title>
+        <p>Martin Kordich, Patricio Jones, Gustavo Rozenman</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/2.png"/>
+        <title>Seguridad</title>
+        <p>Diego Rennison, Daniel Peuchot, 
+Gabriel Fiore, Daniel De Andres, Gaspar Farina, Alex Borchardt</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/6.png"/>
+        <title>Presupuesto</title>
+    <p>Alejandro Ramallo, Claudia Moffa,  Mariano Serra</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/3.png"/>
+        <title>Mesa de enlace Municipal</title>
+        <p>Miguel Fliit</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/7.png"/>
+        <title>Disciplina</title>
+        <p>Tete Brizio, Sofia Dolega</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/4.png"/>
+        <title>Club House</title>
+        <p>Elizabeth Levi, Yanina Pausic, Jesica Suide, Mónica Alvarez</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/4.png"/>
+        <title>Directores por AVN</title>
+        <p>Manuel Kosoy y Carlos Fernandez Lobbe</p>
+      </article>
+      <article class="artAbout">
+        <img src="contenidos/about/iconos/4.png"/>
+        <title>Directores por los vecinos</title>
+        <p>Miguel Flitt (Director) Claudia Moffa (Directora Suplente)</p>
+      </article>
+        
+    </section>  
+  </div>
   <div id="aboutContactPanel">
     <span style="font-size: 14px">Mensajes a la Administración</span><br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;Por favor, completá el siguiente formulario<br>

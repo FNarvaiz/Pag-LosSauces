@@ -55,13 +55,17 @@ end function
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>Vecinos de los Sauces - Sistema Brick</title>
+<title>Vecinos de los Sauces</title>
 <meta http-equiv="Content-Type" content="text/html;">
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/png" href="contenidos/iconos/favicon-32x32.png" sizes="32x32" />
 <link rel="icon" type="image/png" href="contenidos/iconos/favicon-16x16.png" sizes="16x16" />
 <link rel="shortcut icon" href="contenidos/iconos/favicon.ico">
+<link href="https://www.vecinosdelgolf.com.ar/apple-touch-icon.png" rel="apple-touch-icon" />
+<link href="https://www.vecinosdelgolf.com.ar/icon-hires.png" rel="icon" sizes="192x192" />
+<link href="https://www.vecinosdelgolf.com.ar/icon-normal.png" rel="icon" sizes="128x128" />
 <%
 includeStyleSheet("front-end/forms/forms.css")
 includeStyleSheet("front-end/forms/formsDialogs.css")
@@ -75,6 +79,8 @@ includeStyleSheet("userfiles/estilos.css")
 includeStyleSheet("front-end/main.css")
 includeStyleSheet("front-end/timeLine.css")
 includeStyleSheet("front-end/forms/datePicker.css")
+includeStyleSheet("front-end/mediaQuery.css")
+includeStyleSheet("front-end/nav.css")
 
 includeSript("front-end/main.js")
 includeSript("front-end/ajax.js")
