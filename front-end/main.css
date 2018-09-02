@@ -594,7 +594,7 @@ div.bookingStatusTurn {
   left: 20px;
   top: 25px;
   width: 490px;
-  height: 260px;
+  height: 180px;
   color: #ffffff;
   font-size: 14px;
   overflow: hidden;
@@ -648,14 +648,15 @@ div.bookingStatusTurn {
 
 #bookingsFormPanel {
   position: absolute;
-  left: 30px;
-  top: 300px;
-  width: 480px;
-  height: 140px;
-  color: #ffffff;
-  font-size: 14px;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.15);
+    left: 30px;
+    top: 210px;
+    width: 480px;
+    height: 240px;
+    text-align: left;
+    color: #ffffff;
+    font-size: 14px;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.15);
 }
 #bookingsFormTitle {
   font-size: 18px;

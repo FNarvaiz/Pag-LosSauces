@@ -171,6 +171,10 @@ li {
     margin-bottom: 2px;
     margin-top: 2px;
 }
+#bookingsformNote{
+    text-align: left;
+
+}
 .date{
     display: inline-block;
         border-right: dotted 1px #666666;

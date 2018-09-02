@@ -57,7 +57,15 @@ function renderBookings
           </select>
         </td>
       </tr>
-      <tr><td align="right" colspan="4" id="bookingsformNote"><br>La Administración se pondrá en contacto para confirmar la reserva.</td></tr> 
+      <tr><td align="right" colspan="4" id="bookingsformNote"><br>La Administración se pondrá en contacto para confirmar la reserva.<br>
+        Opción Horario / Valores:<br>
+ Martes a viernes: 16 a 20 hs.  $1.500.- Sin costo adicional.<br>
+ 20 a 24 hs.  $2.000.- Mas $ 800.- del servicio de limpieza y control<br> 
+ Viernes:  20 a 03 hs. $2.800.-  Mas $    1.000.- del servicio de limpieza y control  <br>
+ Sábado:  13 a 17 hs. $2.500 sin costo adicional,<br>
+ 17 a 21 hs. $2.500.-  Mas $     450.-  del servicio de limpieza y control<br>
+ 21 a 01 hs. $2.800.-  Mas $     800.-  del servicio de limpieza y control<br>
+ 21 a 03 hs. $3.200.-  Mas $   1.000.- del servicio de limpieza y control</td></tr> 
     </table>
   </div>
   <div id="bookingsStatusPanel">
