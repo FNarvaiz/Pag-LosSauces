@@ -1,0 +1,16 @@
+D:\Documents\Visual Studio 2012\Projects\Los Sauces\Los Sauces\bin\Los Sauces.dll
+D:\Documents\Visual Studio 2012\Projects\Los Sauces\Los Sauces\bin\Los Sauces.pdb
+D:\Documents\Visual Studio 2012\Projects\Los Sauces\Los Sauces\bin\Los Sauces.xml
+D:\Documents\Visual Studio 2012\Projects\Los Sauces\Los Sauces\obj\Debug\Los_Sauces.Resources.resources
+D:\Documents\Visual Studio 2012\Projects\Los Sauces\Los Sauces\obj\Debug\Los Sauces.vbproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2012\Projects\Los Sauces\Los Sauces\obj\Debug\Los Sauces.dll
+D:\Documents\Visual Studio 2012\Projects\Los Sauces\Los Sauces\obj\Debug\Los Sauces.xml
+D:\Documents\Visual Studio 2012\Projects\Los Sauces\Los Sauces\obj\Debug\Los Sauces.pdb
+C:\Users\UnAlegreTigre\Desktop\Projects\Los Sauces\Los Sauces\bin\Los Sauces.dll
+C:\Users\UnAlegreTigre\Desktop\Projects\Los Sauces\Los Sauces\bin\Los Sauces.pdb
+C:\Users\UnAlegreTigre\Desktop\Projects\Los Sauces\Los Sauces\bin\Los Sauces.xml
+C:\Users\UnAlegreTigre\Desktop\Projects\Los Sauces\Los Sauces\obj\Debug\Los_Sauces.Resources.resources
+C:\Users\UnAlegreTigre\Desktop\Projects\Los Sauces\Los Sauces\obj\Debug\Los Sauces.vbproj.GenerateResource.Cache
+C:\Users\UnAlegreTigre\Desktop\Projects\Los Sauces\Los Sauces\obj\Debug\Los Sauces.dll
+C:\Users\UnAlegreTigre\Desktop\Projects\Los Sauces\Los Sauces\obj\Debug\Los Sauces.xml
+C:\Users\UnAlegreTigre\Desktop\Projects\Los Sauces\Los Sauces\obj\Debug\Los Sauces.pdb

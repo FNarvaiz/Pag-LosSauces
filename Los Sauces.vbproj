@@ -1,0 +1,525 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{CD0A2407-DA42-4652-BE01-D8C04E9B0DF8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Los_Sauces</RootNamespace>
+    <AssemblyName>Los Sauces</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Los Sauces.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>Los Sauces.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="back-end\credits.asp" />
+    <Content Include="back-end\default.asp" />
+    <Content Include="back-end\forms\app\ajax.js" />
+    <Content Include="back-end\forms\app\app.css" />
+    <Content Include="back-end\forms\app\app.js" />
+    <Content Include="back-end\forms\app\appForms.asp" />
+    <Content Include="back-end\forms\app\appForms.css" />
+    <Content Include="back-end\forms\app\appProcesses.asp" />
+    <Content Include="back-end\forms\app\appRecordViewFields.asp" />
+    <Content Include="back-end\forms\app\basics.css" />
+    <Content Include="back-end\forms\app\classifiedsForms.asp" />
+    <Content Include="back-end\forms\app\contentsForms.asp" />
+    <Content Include="back-end\forms\app\elemState.js" />
+    <Content Include="back-end\forms\app\neighborsForms.asp" />
+    <Content Include="back-end\forms\app\paramsForms.asp" />
+    <Content Include="back-end\forms\app\report.css" />
+    <Content Include="back-end\forms\app\report.js" />
+    <Content Include="back-end\forms\app\reportPrint.css" />
+    <Content Include="back-end\forms\app\reportRendering.asp" />
+    <Content Include="back-end\forms\app\reportsForms.asp" />
+    <Content Include="back-end\forms\app\resourceBookingsForms.asp" />
+    <Content Include="back-end\forms\app\resource\collapse.png" />
+    <Content Include="back-end\forms\app\resource\expand.png" />
+    <Content Include="back-end\forms\app\resource\heading.png" />
+    <Content Include="back-end\forms\app\resource\initializing.gif" />
+    <Content Include="back-end\forms\app\resource\loading.gif" />
+    <Content Include="back-end\forms\app\resource\logo.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_doc.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_dwg.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_generic.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_jpg.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_pdf.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_ppt.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_rar.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_txt.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_xls.png" />
+    <Content Include="back-end\forms\app\resource\lst_file_icon_zip.png" />
+    <Content Include="back-end\forms\app\resource\menuHandle.png" />
+    <Content Include="back-end\forms\app\securityForms.asp" />
+    <Content Include="back-end\forms\app\suppliersForms.asp" />
+    <Content Include="back-end\forms\app\surveysForms.asp" />
+    <Content Include="back-end\forms\app\timeLineForms.asp" />
+    <Content Include="back-end\forms\app\usersForms.asp" />
+    <Content Include="back-end\forms\datePicker.asp" />
+    <Content Include="back-end\forms\datePicker.css" />
+    <Content Include="back-end\forms\datePicker.js" />
+    <Content Include="back-end\forms\formRecordViewFields.asp" />
+    <Content Include="back-end\forms\forms.asp" />
+    <Content Include="back-end\forms\forms.css" />
+    <Content Include="back-end\forms\forms.js" />
+    <Content Include="back-end\forms\formsData.asp" />
+    <Content Include="back-end\forms\formsDialogs.asp" />
+    <Content Include="back-end\forms\formsDialogs.css" />
+    <Content Include="back-end\forms\formsGridView.asp" />
+    <Content Include="back-end\forms\formsGridView.css" />
+    <Content Include="back-end\forms\formsListing.asp" />
+    <Content Include="back-end\forms\formsQueryOptions.asp" />
+    <Content Include="back-end\forms\formsQueryOptions.css" />
+    <Content Include="back-end\forms\formsRecordView.asp" />
+    <Content Include="back-end\forms\formsRecordView.css" />
+    <Content Include="back-end\forms\formsUtils.asp" />
+    <Content Include="back-end\forms\resource\b-add.bmp" />
+    <Content Include="back-end\forms\resource\b-delete.bmp" />
+    <Content Include="back-end\forms\resource\b-refresh.bmp" />
+    <Content Include="back-end\forms\resource\b-save.bmp" />
+    <Content Include="back-end\forms\resource\b-window.bmp" />
+    <Content Include="back-end\forms\resource\btnDatePicker.png" />
+    <Content Include="back-end\forms\resource\btnDatePickerDimmed.png" />
+    <Content Include="back-end\forms\session.js" />
+    <Content Include="back-end\forms\test.asp" />
+    <Content Include="back-end\forms\uploadAndProcessFile.asp" />
+    <Content Include="back-end\forms\utils.js" />
+    <Content Include="back-end\forms\utils\clsField.asp" />
+    <Content Include="back-end\forms\utils\clsUpload.asp" />
+    <Content Include="back-end\forms\utils\db.asp" />
+    <Content Include="back-end\forms\utils\dbConst.asp" />
+    <Content Include="back-end\forms\utils\dbTestConn.asp" />
+    <Content Include="back-end\forms\utils\fileUpload.asp" />
+    <Content Include="back-end\forms\utils\json.asp" />
+    <Content Include="back-end\forms\utils\usersDB.asp" />
+    <Content Include="back-end\forms\utils\usersDBConfig.asp" />
+    <Content Include="contenidos\about\about.css" />
+    <Content Include="contenidos\about\about.html" />
+    <Content Include="contenidos\about\blanco.png" />
+    <Content Include="contenidos\about\iconos\1.png" />
+    <Content Include="contenidos\about\iconos\10.png" />
+    <Content Include="contenidos\about\iconos\12.png" />
+    <Content Include="contenidos\about\iconos\13.png" />
+    <Content Include="contenidos\about\iconos\2.png" />
+    <Content Include="contenidos\about\iconos\3.png" />
+    <Content Include="contenidos\about\iconos\4.png" />
+    <Content Include="contenidos\about\iconos\5.png" />
+    <Content Include="contenidos\about\iconos\6.png" />
+    <Content Include="contenidos\about\iconos\7.png" />
+    <Content Include="contenidos\about\iconos\8.png" />
+    <Content Include="contenidos\about\iconos\9.png" />
+    <Content Include="contenidos\about\linea.png" />
+    <Content Include="contenidos\faq\faq.css" />
+    <Content Include="contenidos\faq\faq.html" />
+    <Content Include="contenidos\faq\signo.png" />
+    <Content Include="contenidos\phones\phones.css" />
+    <Content Include="contenidos\phones\phones.html" />
+    <Content Include="default.asp" />
+    <Content Include="fckeditor\editor\css\behaviors\disablehandles.htc" />
+    <Content Include="fckeditor\editor\css\behaviors\showtableborders.htc" />
+    <Content Include="fckeditor\editor\css\fck_editorarea.css" />
+    <Content Include="fckeditor\editor\css\fck_internal.css" />
+    <Content Include="fckeditor\editor\css\fck_showtableborders_gecko.css" />
+    <Content Include="fckeditor\editor\css\images\block_address.png" />
+    <Content Include="fckeditor\editor\css\images\block_blockquote.png" />
+    <Content Include="fckeditor\editor\css\images\block_div.png" />
+    <Content Include="fckeditor\editor\css\images\block_h1.png" />
+    <Content Include="fckeditor\editor\css\images\block_h2.png" />
+    <Content Include="fckeditor\editor\css\images\block_h3.png" />
+    <Content Include="fckeditor\editor\css\images\block_h4.png" />
+    <Content Include="fckeditor\editor\css\images\block_h5.png" />
+    <Content Include="fckeditor\editor\css\images\block_h6.png" />
+    <Content Include="fckeditor\editor\css\images\block_p.png" />
+    <Content Include="fckeditor\editor\css\images\block_pre.png" />
+    <Content Include="fckeditor\editor\css\images\fck_anchor.gif" />
+    <Content Include="fckeditor\editor\css\images\fck_flashlogo.gif" />
+    <Content Include="fckeditor\editor\css\images\fck_hiddenfield.gif" />
+    <Content Include="fckeditor\editor\css\images\fck_pagebreak.gif" />
+    <Content Include="fckeditor\editor\dialog\common\fck_dialog_common.css" />
+    <Content Include="fckeditor\editor\dialog\common\fck_dialog_common.js" />
+    <Content Include="fckeditor\editor\dialog\common\images\locked.gif" />
+    <Content Include="fckeditor\editor\dialog\common\images\reset.gif" />
+    <Content Include="fckeditor\editor\dialog\common\images\unlocked.gif" />
+    <Content Include="fckeditor\editor\dialog\fck_about.html" />
+    <Content Include="fckeditor\editor\dialog\fck_about\logo_fckeditor.gif" />
+    <Content Include="fckeditor\editor\dialog\fck_about\logo_fredck.gif" />
+    <Content Include="fckeditor\editor\dialog\fck_anchor.html" />
+    <Content Include="fckeditor\editor\dialog\fck_button.html" />
+    <Content Include="fckeditor\editor\dialog\fck_checkbox.html" />
+    <Content Include="fckeditor\editor\dialog\fck_colorselector.html" />
+    <Content Include="fckeditor\editor\dialog\fck_docprops.html" />
+    <Content Include="fckeditor\editor\dialog\fck_docprops\fck_document_preview.html" />
+    <Content Include="fckeditor\editor\dialog\fck_flash.html" />
+    <Content Include="fckeditor\editor\dialog\fck_flash\fck_flash.js" />
+    <Content Include="fckeditor\editor\dialog\fck_flash\fck_flash_preview.html" />
+    <Content Include="fckeditor\editor\dialog\fck_form.html" />
+    <Content Include="fckeditor\editor\dialog\fck_hiddenfield.html" />
+    <Content Include="fckeditor\editor\dialog\fck_image.html" />
+    <Content Include="fckeditor\editor\dialog\fck_image\fck_image.js" />
+    <Content Include="fckeditor\editor\dialog\fck_image\fck_image_preview.html" />
+    <Content Include="fckeditor\editor\dialog\fck_link.html" />
+    <Content Include="fckeditor\editor\dialog\fck_link\fck_link.js" />
+    <Content Include="fckeditor\editor\dialog\fck_listprop.html" />
+    <Content Include="fckeditor\editor\dialog\fck_paste.html" />
+    <Content Include="fckeditor\editor\dialog\fck_radiobutton.html" />
+    <Content Include="fckeditor\editor\dialog\fck_replace.html" />
+    <Content Include="fckeditor\editor\dialog\fck_select.html" />
+    <Content Include="fckeditor\editor\dialog\fck_select\fck_select.js" />
+    <Content Include="fckeditor\editor\dialog\fck_smiley.html" />
+    <Content Include="fckeditor\editor\dialog\fck_source.html" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\blank.html" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\controls.html" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\controlWindow.js" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\spellchecker.html" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\spellChecker.js" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\spellerStyle.css" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\wordWindow.js" />
+    <Content Include="fckeditor\editor\dialog\fck_specialchar.html" />
+    <Content Include="fckeditor\editor\dialog\fck_spellerpages.html" />
+    <Content Include="fckeditor\editor\dialog\fck_table.html" />
+    <Content Include="fckeditor\editor\dialog\fck_tablecell.html" />
+    <Content Include="fckeditor\editor\dialog\fck_template.html" />
+    <Content Include="fckeditor\editor\dialog\fck_template\images\template1.gif" />
+    <Content Include="fckeditor\editor\dialog\fck_template\images\template2.gif" />
+    <Content Include="fckeditor\editor\dialog\fck_template\images\template3.gif" />
+    <Content Include="fckeditor\editor\dialog\fck_textarea.html" />
+    <Content Include="fckeditor\editor\dialog\fck_textfield.html" />
+    <Content Include="fckeditor\editor\fckdebug.html" />
+    <Content Include="fckeditor\editor\fckdialog.html" />
+    <Content Include="fckeditor\editor\fckeditor.html" />
+    <Content Include="fckeditor\editor\fckeditor.original.html" />
+    <Content Include="fckeditor\fckconfig.js" />
+    <Content Include="fckeditor\fckconfig1.js" />
+    <Content Include="fckeditor\fckeditor.js" />
+    <Content Include="fckeditor\fckpackager.xml" />
+    <Content Include="fckeditor\fckstyles.xml" />
+    <Content Include="fckeditor\fcktemplates.xml" />
+    <Content Include="fckeditor\license.txt" />
+    <Content Include="front-end\ajax.js" />
+    <Content Include="front-end\bookings.asp" />
+    <Content Include="front-end\classifieds.asp" />
+    <Content Include="front-end\clima.htm" />
+    <Content Include="front-end\clima2.htm" />
+    <Content Include="front-end\const.asp" />
+    <Content Include="front-end\downloads.asp" />
+    <Content Include="front-end\forms\app\ajax.js" />
+    <Content Include="front-end\forms\app\appForms.asp" />
+    <Content Include="front-end\forms\app\appForms.css" />
+    <Content Include="front-end\forms\app\appProcesses.asp" />
+    <Content Include="front-end\forms\app\appRecordViewFields.asp" />
+    <Content Include="front-end\forms\app\profileForms.asp" />
+    <Content Include="front-end\forms\app\report.css" />
+    <Content Include="front-end\forms\app\report.js" />
+    <Content Include="front-end\forms\app\reportPrint.css" />
+    <Content Include="front-end\forms\app\reportRendering.asp" />
+    <Content Include="front-end\forms\app\reportsForms.asp" />
+    <Content Include="front-end\forms\app\resource\collapse.png" />
+    <Content Include="front-end\forms\app\resource\expand.png" />
+    <Content Include="front-end\forms\app\resource\heading.png" />
+    <Content Include="front-end\forms\app\resource\initializing.gif" />
+    <Content Include="front-end\forms\app\resource\loading.gif" />
+    <Content Include="front-end\forms\app\resource\logo.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_doc.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_dwg.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_generic.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_jpg.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_pdf.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_ppt.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_rar.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_txt.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_xls.png" />
+    <Content Include="front-end\forms\app\resource\lst_file_icon_zip.png" />
+    <Content Include="front-end\forms\app\resource\menuHandle.png" />
+    <Content Include="front-end\forms\datePicker.asp" />
+    <Content Include="front-end\forms\datePicker.css" />
+    <Content Include="front-end\forms\datePicker.js" />
+    <Content Include="front-end\forms\formRecordViewFields.asp" />
+    <Content Include="front-end\forms\forms.asp" />
+    <Content Include="front-end\forms\forms.css" />
+    <Content Include="front-end\forms\forms.js" />
+    <Content Include="front-end\forms\formsData.asp" />
+    <Content Include="front-end\forms\formsDialogs.asp" />
+    <Content Include="front-end\forms\formsDialogs.css" />
+    <Content Include="front-end\forms\formsGridView.asp" />
+    <Content Include="front-end\forms\formsGridView.css" />
+    <Content Include="front-end\forms\formsListing.asp" />
+    <Content Include="front-end\forms\formsQueryOptions.asp" />
+    <Content Include="front-end\forms\formsQueryOptions.css" />
+    <Content Include="front-end\forms\formsRecordView.asp" />
+    <Content Include="front-end\forms\formsRecordView.css" />
+    <Content Include="front-end\forms\formsUtils.asp" />
+    <Content Include="front-end\forms\resource\b-add.bmp" />
+    <Content Include="front-end\forms\resource\b-delete.bmp" />
+    <Content Include="front-end\forms\resource\b-refresh.bmp" />
+    <Content Include="front-end\forms\resource\b-save.bmp" />
+    <Content Include="front-end\forms\resource\b-window.bmp" />
+    <Content Include="front-end\forms\resource\btnDatePicker.png" />
+    <Content Include="front-end\forms\resource\btnDatePickerDimmed.png" />
+    <Content Include="front-end\forms\uploadAndProcessFile.asp" />
+    <Content Include="front-end\forms\utils.js" />
+    <Content Include="front-end\forms\utils\clsField.asp" />
+    <Content Include="front-end\forms\utils\clsUpload.asp" />
+    <Content Include="front-end\forms\utils\db.asp" />
+    <Content Include="front-end\forms\utils\dbConst.asp" />
+    <Content Include="front-end\forms\utils\dbTestConn.asp" />
+    <Content Include="front-end\forms\utils\fileUpload.asp" />
+    <Content Include="front-end\forms\utils\json.asp" />
+    <Content Include="front-end\forms\utils\usersDB.asp" />
+    <Content Include="front-end\forms\utils\usersDBConfig.asp" />
+    <Content Include="front-end\login.asp" />
+    <Content Include="front-end\main.asp" />
+    <Content Include="front-end\main.css" />
+    <Content Include="front-end\main.js" />
+    <Content Include="front-end\menu.js" />
+    <Content Include="front-end\misc.js" />
+    <Content Include="front-end\resource\ajax-loader.gif" />
+    <Content Include="front-end\resource\arrow_left.png" />
+    <Content Include="front-end\resource\arrow_left_detail.png" />
+    <Content Include="front-end\resource\arrow_left_end.png" />
+    <Content Include="front-end\resource\arrow_left_fast.png" />
+    <Content Include="front-end\resource\arrow_right.png" />
+    <Content Include="front-end\resource\arrow_right_detail.png" />
+    <Content Include="front-end\resource\arrow_right_end.png" />
+    <Content Include="front-end\resource\arrow_right_fast.png" />
+    <Content Include="front-end\resource\calendar.jpg" />
+    <Content Include="front-end\resource\downloadHeadingBg.png" />
+    <Content Include="front-end\resource\dynPanelBackgnd.jpg" />
+    <Content Include="front-end\resource\file_icon_doc.png" />
+    <Content Include="front-end\resource\file_icon_docx.png" />
+    <Content Include="front-end\resource\file_icon_dwg.png" />
+    <Content Include="front-end\resource\file_icon_generic.png" />
+    <Content Include="front-end\resource\file_icon_pdf.png" />
+    <Content Include="front-end\resource\file_icon_ppt.png" />
+    <Content Include="front-end\resource\file_icon_rar.png" />
+    <Content Include="front-end\resource\file_icon_xls.png" />
+    <Content Include="front-end\resource\file_icon_xlsx.png" />
+    <Content Include="front-end\resource\file_icon_zip.png" />
+    <Content Include="front-end\resource\flash_player_logo.jpg" />
+    <Content Include="front-end\resource\footer.png" />
+    <Content Include="front-end\resource\header.png" />
+    <Content Include="front-end\resource\linea_tiempo_0.png" />
+    <Content Include="front-end\resource\linea_tiempo_1.png" />
+    <Content Include="front-end\resource\linea_tiempo_1_activo.png" />
+    <Content Include="front-end\resource\linea_tiempo_2.png" />
+    <Content Include="front-end\resource\linea_tiempo_2_activo.png" />
+    <Content Include="front-end\resource\linea_tiempo_3.png" />
+    <Content Include="front-end\resource\linea_tiempo_3_activo.png" />
+    <Content Include="front-end\resource\linea_tiempo_4.png" />
+    <Content Include="front-end\resource\linea_tiempo_4_activo.png" />
+    <Content Include="front-end\resource\linea_tiempo_5.png" />
+    <Content Include="front-end\resource\linea_tiempo_5_activo.png" />
+    <Content Include="front-end\resource\linea_tiempo_6.png" />
+    <Content Include="front-end\resource\linea_tiempo_6_activo.png" />
+    <Content Include="front-end\resource\linea_tiempo_7.png" />
+    <Content Include="front-end\resource\linea_tiempo_8.png" />
+    <Content Include="front-end\resource\linea_tiempo_9.png" />
+    <Content Include="front-end\resource\login.jpg" />
+    <Content Include="front-end\resource\mainBg.jpg" />
+    <Content Include="front-end\resource\mainBgOverlay.png" />
+    <Content Include="front-end\resource\menuBg.png" />
+    <Content Include="front-end\resource\menuBtnBgNormal.png" />
+    <Content Include="front-end\resource\menuBtnBgSelected.png" />
+    <Content Include="front-end\resource\timeLineColumnBg.png" />
+    <Content Include="front-end\resource\timeLineColumnSelectedBg.png" />
+    <Content Include="front-end\resource\timeLineScaleBg.png" />
+    <Content Include="front-end\resource\voto1.png" />
+    <Content Include="front-end\resource\voto2.png" />
+    <Content Include="front-end\resource\voto3.png" />
+    <Content Include="front-end\resource\voto4.png" />
+    <Content Include="front-end\resource\votos_bg.png" />
+    <Content Include="front-end\resource\votos_fg.png" />
+    <Content Include="front-end\suppliers.asp" />
+    <Content Include="front-end\surveys.asp" />
+    <Content Include="front-end\timeLine.asp" />
+    <Content Include="front-end\timeLine.css" />
+    <Content Include="front-end\timeLine.js" />
+    <Content Include="front-end\usr.asp" />
+    <Content Include="front-end\utils\db.asp" />
+    <Content Include="front-end\utils\dbConst.asp" />
+    <Content Include="front-end\utils\googleAnalytics.asp" />
+    <Content Include="front-end\utils\json.asp" />
+    <Content Include="front-end\utils\utils.asp" />
+    <Content Include="futbol\css\main.css" />
+    <Content Include="futbol\img\fondo.jpg" />
+    <Content Include="futbol\img\tabla.png" />
+    <Content Include="userfiles\estilos.css" />
+    <Content Include="userfiles\pizarra2.jpg" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\MyExtensions\MyWebExtension.vb">
+      <VBMyExtensionTemplateID>Microsoft.VisualBasic.Web.MyExtension</VBMyExtensionTemplateID>
+      <VBMyExtensionTemplateVersion>1.0.0.0</VBMyExtensionTemplateVersion>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".user.ini" />
+    <Content Include="basedelossauces\vecinos_de_los_sauces.bak" />
+    <Content Include="contenidos\about\about.rar" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\server-scripts\spellchecker.cfm" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\server-scripts\spellchecker.php" />
+    <Content Include="fckeditor\editor\dialog\fck_spallerpages\spellerpages\server-scripts\spellchecker.pl" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="fckeditor\editor\dtd\" />
+    <Folder Include="fckeditor\editor\filemanager\" />
+    <Folder Include="fckeditor\editor\images\" />
+    <Folder Include="fckeditor\editor\js\" />
+    <Folder Include="fckeditor\editor\lang\" />
+    <Folder Include="fckeditor\editor\plugins\" />
+    <Folder Include="fckeditor\editor\skins\" />
+    <Folder Include="userfiles\file\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:7051/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
