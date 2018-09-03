@@ -22,7 +22,7 @@ function renderMainMenu
     %>
     <div id="espacio"></div>
     <div onclick="menu()" class="menu_bar">
-      <span>Vecinos del los Sauces</span>
+      <span>Vecinos de los Sauces</span>
     </div>
     <ul id="navegador">
       <%
@@ -43,7 +43,7 @@ function renderMainMenu
     %>
     <div id="espacio"></div>
     <div onclick="menu()" class="menu_bar">
-      <span>Vecinos del los Sauces</span>
+      <span>Vecinos de los Sauces</span>
     </div>
     <ul id="navegadorLogin">
       <li class="btn anchor" onclick="showLoginDialog()" id="loginMenuItem"><%= eval("loginMenuItem" & lang) %></li>
