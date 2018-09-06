@@ -354,50 +354,48 @@ function bookingsTake(resourceId, bookingDate, turnStart, turnType, extraNeighbo
         dbReleaseData
         if uCase(status) = "DISPONIBLE" then
           dim extraNeighborId: extraNeighborId = null
-  			if resourceId = tennisCourt1BookingResourceId or resourceId = tennisCourt2BookingResourceId then
+  			  if resourceId = tennisCourt1BookingResourceId or resourceId = tennisCourt2BookingResourceId then
   					dbGetData("SELECT CAST(CASE WHEN DATEDIFF(DAY, GETDATE(), " & sqlDate & ") = 0 OR DATEPART(HOUR, GETDATE()) >= 8 THEN 1 ELSE 0 END AS BIT)")
               OK = rs(0)
               dbReleaseData
-            end if
-  	 if OK then
-          if extraNeighborRequired then
-            if not isNull(extraNeighborUnit) then 
-              dbGetData("SELECT dbo.ID_VECINO_DE_UNIDAD(" & sqlValue(extraNeighborUnit) & ")")
-              extraNeighborId = rs(0)
-              dbReleaseData
-              OK = not isNull(extraNeighborId)
-              if OK then
-                OK = extraNeighborId <> usrId
+          end if
+    	    if OK then
+            if extraNeighborRequired then
+              if not isNull(extraNeighborUnit) then 
+                dbGetData("SELECT ID FROM VECINOS WHERE UNIDAD=" & sqlValue(extraNeighborUnit) & "")
+                extraNeighborId = rs(0)
+                dbReleaseData
+                OK = not isNull(extraNeighborId)
                 if OK then
-                  dbGetData("SELECT COUNT(*) FROM RESERVAS WHERE (" & _
-                    resourceId & " IN (" & tennisCourt1BookingResourceId & ", " & tennisCourt2BookingResourceId & ") AND " & _
-                    "ID_RECURSO IN (" & tennisCourt1BookingResourceId & ", " & tennisCourt2BookingResourceId & ") OR ID_RECURSO=" & resourceId & ") AND " & _
-                    "FECHA_FIN > GETDATE() AND (ID_VECINO=" & extraNeighborId & " OR ID_VECINO_2=" & extraNeighborId & ")")
-                  OK = (rs(0) = 0)
-                  dbReleaseData
-                  if not OK then
+                  OK = extraNeighborId <> usrId
+                  if OK then
+                    dbGetData("SELECT COUNT(*) FROM RESERVAS WHERE (" & _
+                      resourceId & " IN (" & tennisCourt1BookingResourceId & ", " & tennisCourt2BookingResourceId & ") AND " & _
+                      "ID_RECURSO IN (" & tennisCourt1BookingResourceId & ", " & tennisCourt2BookingResourceId & ") OR ID_RECURSO=" & resourceId & ") AND " & _
+                      "FECHA_FIN > GETDATE() AND (ID_VECINO=" & extraNeighborId & " OR ID_VECINO_2=" & extraNeighborId & ")")
+                    OK = (rs(0) = 0)
+                    dbReleaseData
+                    if not OK then
+                      JSONAddOpFailed
+                      JSONAddMessage resource & ": ya existe una reserva a utilizar para el Número de Lote " & extraNeighborUnit & "."
+                      logActivity "Reserva compartida " & resource, bookingDate & " " & turn & ", denegada: el otro vecino ya tiene una reserva a utilizar "
+                    end if
+                  else
                     JSONAddOpFailed
-                    JSONAddMessage resource & ": ya existe una reserva a utilizar para el Número de Lote " & extraNeighborUnit & "."
-                    logActivity "Reserva compartida " & resource, bookingDate & " " & turn & ", denegada: el otro vecino ya tiene una reserva a utilizar "
+                    JSONAddMessage resource & ": el Número de Lote para reserva compartida no puede ser el propio."
+                    logActivity "Reserva compartida " & resource, bookingDate & " " & turn & ", denegada: Número de Lote no puede ser el propio"
                   end if
                 else
                   JSONAddOpFailed
-                  JSONAddMessage resource & ": el Número de Lote para reserva compartida no puede ser el propio."
-                  logActivity "Reserva compartida " & resource, bookingDate & " " & turn & ", denegada: Número de Lote no puede ser el propio"
+                  JSONAddMessage resource & ": el Número de Lote para reserva compartida es incorrecto."
+                  logActivity "Reserva compartida " & resource, bookingDate & " " & turn & ", denegada: Número de Lote incorrecto"
                 end if
               else
                 JSONAddOpFailed
-                JSONAddMessage resource & ": el Número de Lote para reserva compartida es incorrecto."
-                logActivity "Reserva compartida " & resource, bookingDate & " " & turn & ", denegada: Número de Lote incorrecto"
+                JSONAddMessage resource & ": falta el Número de Lote para reserva compartida."
+                logActivity "Reserva compartida " & resource, bookingDate & " " & turn & ", denegada: falta Número de Lote"
               end if
             else
-              JSONAddOpFailed
-              JSONAddMessage resource & ": falta el Número de Lote para reserva compartida."
-              logActivity "Reserva compartida " & resource, bookingDate & " " & turn & ", denegada: falta Número de Lote"
-            end if
-          else
-            
-            
               if turnType = tennisClassBookingTypeId then
                 dbGetData("SELECT CAST(CASE WHEN (SELECT COUNT(*) FROM RESERVAS WHERE " & _
                   resourceId & " IN (" & tennisCourt1BookingResourceId & ", " & tennisCourt2BookingResourceId & ") AND " & _
@@ -413,13 +411,12 @@ function bookingsTake(resourceId, bookingDate, turnStart, turnType, extraNeighbo
                 JSONAddMessage resource & ": de lunes a viernes de 19 a 21hs, y fines de semana, se permite una clase por turno."
                 logActivity "Reserva de clase " & resource, bookingDate & " " & turn & ", denegada: se permite una clase por turno."
               end if
-            
-          end if
-  			else
-  			JSONAddOpFailed
-  			JSONAddMessage resource & ": Las reservas para mañana se pueden efectuar recién a partir de las 8:00hs."
-  			logActivity "Reserva día siguiente " & resource, bookingDate & " " & turn & ", denegada: se permite a partir de las 8.00 "
-  			end if
+            end if
+  			  else
+      			JSONAddOpFailed
+      			JSONAddMessage resource & ": Las reservas para mañana se pueden efectuar recién a partir de las 8:00hs."
+      			logActivity "Reserva día siguiente " & resource, bookingDate & " " & turn & ", denegada: se permite a partir de las 8.00 "
+    			end if
           if OK then
             dbExecute("INSERT INTO RESERVAS (REC_ID_USUARIO, ID_RECURSO, ID_VECINO, FECHA, INICIO, DURACION, ID_TIPO, ID_VECINO_2) VALUES (" & _
               "1, " & resourceId & ", " & usrId & ", " & sqlDate & ", " & turnStart & ", " & turnDuration & ", " & turnType & ", " & sqlValue(extraNeighborId) & ")")
@@ -429,7 +426,7 @@ function bookingsTake(resourceId, bookingDate, turnStart, turnType, extraNeighbo
               logActivity "Reserva " & resource, bookingDate & " " & turn & ", denegada: error interno"
             else
               JSONAddOpOK
-              logActivity "Reserva " & resource, bookingDate & "&nbsp;" & turn & "&nbsp;" & turnDuration & "&nbsp;" & sqlDate & "&nbsp;" & turnType
+              
             end if
           end if
         else
