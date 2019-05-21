@@ -105,121 +105,142 @@ function renderHome
     <section class="days">
       <h2>LUNES</h2>
       <article class="activityFirst">
-        <h3 class="hour">8:30 - 10:15 </h3>
+        <h3 class="hour">8:30 - 10:30 </h3>
         <p >
           Yoga jovita- house
-(house cerrado - no reservas)
         </p>
       </article>
       <article class="activitySecond">
-        <h3 class="hour">9:30 - 11:30</h3>
+        <h3 class="hour">10:30 - 12:00</h3>
         <p >
-           Yoga
+           GYM LOCAL
         </p>
       </article>
       <article class="activitySecond">
-        <h3 class="hour">10:30 - 11:30</h3>
+        <h3 class="hour">16:45 - 18:00</h3>
         <p >
-          Gym adultas-house
+          Iniciación Danza 3 a 6
         </p>
       </article>
       <article class="activitySecond">
-        <h3 class="hour">17:30 - 19:00</h3>
+        <h3 class="hour">17:30 - 18:30</h3>
         <p >
-           Tela peques - Galeria
+           Hip Hop Infantil 7 a 8
         </p>
       </article>
       <article class="activitySecond">
-        <h3 class="hour">17:30-18:30</h3>
+        <h3 class="hour">18:15 - 19:30</h3>
         <p >
-           Jazz nenas  Teens- House
+           Hip Hop Juvenil 9 a 12
         </p>
       </article>
       <article class="activitySecond">
-        <h3 class="hour">18:30 - 19:30</h3>
+        <h3 class="hour">18:30 - 20:00</h3>
         <p >
-           Jazz adultas - House
+           Acrobacia Tela -SUM
         </p>
       </article>
     </section>
     <section class="days">
       <h2>MARTES</h2>
       <article class="activityFirst">
-        <h3 class="hour">19:00 - 20:00 </h3>
+        <h3 class="hour">9:00 - 10:30 </h3>
         <p >
-         Gym teens adultas- House
+         Yoga Raquel
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">13:30 - 15:00 </h3>
+        <p >
+         GYM LOCAL
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">18:15 - 20:30 </h3>
+        <p >
+         GYM LOCAL
         </p>
       </article>
     </section>
      <section class="days">
       <h2>MIERCOLES</h2>
       <article class="activityFirst">
-        <h3 class="hour">9:30 - 11:30 </h3>
+        <h3 class="hour">9:00 - 10:30 </h3>
         <p >
-         Gym Vero - House
+         Yoga Cristina
         </p>
       </article>
-       <article class="activityFirst">
-        <h3 class="hour">14:00 - 16:00 </h3>
+       <article class="activitySecond">
+        <h3 class="hour">10:30 - 12:00 </h3>
         <p >
-         Taller artes nenes - Sum
+         GYM LOCAL
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">17:00 - 18:15 </h3>
+        <p >
+         Acrobacia Tela
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">18:15 - 19:30 </h3>
+        <p >
+         GYM Aero Box
+        </p>
+      </article>
+      <article class="activitySecond">
+        <h3 class="hour">19:15 - 20:30 </h3>
+        <p >
+         Yoga Cristina
         </p>
       </article>
     </section>
      <section class="days">
       <h2>JUEVES</h2>
       <article class="activityFirst">
-        <h3 class="hour">8:30 - 10:15 </h3>
+        <h3 class="hour">13:30 - 15:00 </h3>
         <p >
-         Tejido Solidario
+         GYM Aero Box
         </p>
       </article>
-      <article class="activityFirst">
-        <h3 class="hour">17:30 - 19:00 </h3>
+      <article class="activitySecond">
+        <h3 class="hour">18:15 - 19:30 </h3>
         <p >
-         Telas nenas - Galeria
+         GYM Local
         </p>
       </article>
-      <article class="activityFirst">
-        <h3 class="hour">19:00 - 20:00</h3>
+      <article class="activitySecond">
+        <h3 class="hour">19:15 - 20:30</h3>
         <p >
-         Gym teens adultas- House
+         GYM Aero Box
         </p>
       </article>
     </section>
      <section class="days">
       <h2>VIERNES</h2>
       <article class="activityFirst">
-        <h3 class="hour">10:30 - 11:30 </h3>
+        <h3 class="hour">8:30 - 10:30 </h3>
         <p >
-         Yoga jovita
+         Yoga jovita - House
         </p>
       </article>
-            <article class="activityFirst">
-        <h3 class="hour">18:00 - 19:00 </h3>
+            <article class="activitySecond">
+        <h3 class="hour">10:30 - 12:00 </h3>
         <p >
-         Zumba teens adultas
+        GYM Local
         </p>
       </article>
     </section>
     <section class="days">
       <h2>SABADO</h2>
       <article class="activityFirst">
-        <h3 class="hour">14:00 - 16:00 </h3>
+        <h3 class="hour">10:00 - 11:30 </h3>
         <p >
-         Futbol
+         Yoga Raquel
         </p>
       </article>
     </section>
-     <section class="days">
-      <h2>DOMINGO</h2>
-      <article class="activityFirst">
-        <h3 class="hour">8:30 - 10:15 </h3>
-        <p >
-         House Abierto - No Reservas
-        </p>
-      </article>
-    </section>
+     
   </div>
   <%
   
