@@ -163,7 +163,7 @@ function renderBookingsListing
 end function
 
 function renderBookingsStatus(resourceId)
-  if resourceId = clubHouseBookingResourceId then
+  if resourceId > 29 then
     renderClubHouseBookingsStatus(resourceId)
   else
     renderTennisBookingsStatus(resourceId)
