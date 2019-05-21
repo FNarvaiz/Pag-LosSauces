@@ -350,13 +350,15 @@ function bookingResourceSelected(combobox)
 function bookingsSendRequest()
 {
   var bookingDate = document.getElementById("bookingsFormDate").value;
+  
+  var placeId = document.getElementById("bookingsFormPlace").value;
   var turnId = document.getElementById("bookingsFormTurn").value;
-  if (!bookingDate || !turnId) {
+   if (!bookingDate || !placeId || !turnId) {
     alert("Por favor, indicá la fecha del evento y el turno para poder solicitar la reserva.");
     return;
   }
   ajaxGetText(appServer + "?lang=" + lang + "&sessionId=" + sessionId + "&content=bookingsSendRequest" + 
-    "&bookingDate=" + encodeURIComponent(bookingDate) + "&turnId=" + turnId, "", loadingSignalId,
+    "&bookingDate=" + encodeURIComponent(bookingDate) + "&placeId=" + placeId + "&turnId=" + turnId, "", loadingSignalId,
     function() {
       eval("var response = " + ajaxResponseText);
       if (response.message) {

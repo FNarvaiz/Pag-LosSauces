@@ -585,7 +585,7 @@ select case getStringParam("content", 30)
   case "bookingsTake": bookingsTake getIntegerParam("resourceId"), getDateTimeParam("bookingDate"), getIntegerParam("turnStart"), _ 
           getIntegerParam("turnType"), getStringParam("extraNeighborUnit", 20)
   case "bookingCancel": bookingCancel getIntegerParam("bookingId")
-  case "bookingsSendRequest": bookingsSendRequest getDateTimeParam("bookingDate"), getIntegerParam("turnId")
+  case "bookingsSendRequest": bookingsSendRequest getDateTimeParam("bookingDate"),getIntegerParam("placeId"), getIntegerParam("turnId")
   
   case "surveys": renderSurveys
   case "saveSurveyVote": saveSurveyVote getIntegerParam("surveyId"), getIntegerParam("voteValue"), getIntegerParam("itemNumber")

@@ -21,7 +21,7 @@ function renderBookings
     </div>
   </div>
   <div id="bookingsFormPanel">
-    <div id="bookingsFormTitle">CLUB HOUSE</div>
+    <div id="bookingsFormTitle">CLUB HOUSE Y SUM</div>
     <table id="bookingsformControls">
       <tr>
         <td valign="middle" width="125" align="right">Fecha del evento</td>
@@ -33,6 +33,16 @@ function renderBookings
         </td>
       </tr>
       <tr>
+        <td valign="middle" width="125" align="right">Espacio</td>
+        <td valign="middle" width="100" colspan="2">
+          <select id="bookingsFormPlace">
+            <option value="30" selected="selected">Club House</option>
+            <option value="40">SUM</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+
         <td valign="middle" width="125" align="right">Turno</td>
         <td valign="middle" width="100" colspan="2">
           <select id="bookingsFormTurn">
@@ -452,14 +462,20 @@ function bookingsTake(resourceId, bookingDate, turnStart, turnType, extraNeighbo
   JSONSend
 end function
 
-function bookingsSendRequest(bookingDate, turnId)
+function bookingsSendRequest(bookingDate, placeId, turnId)
   if not getUsrData then exit function
   dim sqlDate: sqlDate = sqlValue(dbDatePrefix & bookingDate)
   dbGetData("SELECT CAST(CASE WHEN DATEDIFF(D, (SELECT TOP 1 FECHA FROM HOY), " & sqlDate & ") <= 90 THEN 1 ELSE 0 END AS BIT)")
   dim dateOK: dateOK = rs(0)
+  dim resourceName
   dbReleaseData
   if dateOK then
     dim turnStart, turnDuration
+    if placeId = 30 then
+      resourceName = "Club House"
+    else
+      resourceName = "SUM"
+    end if
     dbGetData("SELECT INICIO, DURACION FROM RESERVAS_TURNOS_ESPECIALES WHERE ID_RECURSO=" & clubHouseBookingResourceId & " AND ID=" & turnId)
     turnStart = rs("INICIO")
     turnDuration = rs("DURACION")
@@ -479,6 +495,7 @@ function bookingsSendRequest(bookingDate, turnId)
         "<tr><td>Unidad/Lote:</td><td>" & usrUnit & "</td></tr>" & _
         "<tr><td>Familia:</td><td>" & usrName & "</td></tr>" & _
         "<tr><td>Fecha del evento:</td><td>" & bookingDate & "</td></tr>" & _
+        "<tr><td>Espacio:</td><td>" & uCase(resourceName) & "</td></tr>" & _
         "<tr><td>Turno:</td><td>" & turnName & "</td></tr>" & _
         "</table>"
       sendMail "Vecinos de los Sauces", "info@vecinosdelossauces.com.ar", "Solicitud de reserva del Club House", message, "Familia " & usrName, usrEmail
@@ -487,12 +504,12 @@ function bookingsSendRequest(bookingDate, turnId)
     else
       JSONAddOpFailed
       JSONAddMessage "El turno indicado no se encuentra disponible."
-      logActivity "Solicitud reserva Club House", "Denegada, turno no disponible."
+      logActivity "Solicitud reserva " & resourceName, "Denegada, turno no disponible."
     end if
   else
     JSONAddOpFailed
-    JSONAddMessage "Las reservas del Club House deben solicitarse con una anticipación máxima de 90 días."
-    logActivity "Solicitud reserva Club House", "Denegada, anticipación excesiva."
+    JSONAddMessage "Las reservas del " & resourceName &" deben solicitarse con una anticipación máxima de 90 días."
+    logActivity "Solicitud reserva " & resourceName , "Denegada, anticipación excesiva."
   end if
   JSONSend
 end function
