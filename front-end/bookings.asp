@@ -497,7 +497,9 @@ function bookingsSendRequest(bookingDate, placeId, turnId)
         "<tr><td>Fecha del evento:</td><td>" & bookingDate & "</td></tr>" & _
         "<tr><td>Espacio:</td><td>" & uCase(resourceName) & "</td></tr>" & _
         "<tr><td>Turno:</td><td>" & turnName & "</td></tr>" & _
-        "</table>"
+        "</table>" & _
+        "Links : <h3><a href=" & dQuotes("https://vecinosdelossauces.com.ar/contenidos/ReglamentoHouse06-2019.doc") & ">Reglamento House</a> </h3></br>"& _
+        " <h3><a href=" & dQuotes("https://vecinosdelossauces.com.ar/contenidos/ClubHouseAlquiler06-2019.doc") & ">Alquiler House</a> </h3></br>"
       sendMail "Vecinos de los Sauces", "info@vecinosdelossauces.com.ar", "Solicitud de reserva del Club House", message, "Familia " & usrName, usrEmail
       logActivity "Solicitud reserva Club House", "Enviada"
       exit function
