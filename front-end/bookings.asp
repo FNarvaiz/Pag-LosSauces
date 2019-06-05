@@ -35,7 +35,7 @@ function renderBookings
       <tr>
         <td valign="middle" width="125" align="right">Espacio</td>
         <td valign="middle" width="100" colspan="2">
-          <select id="bookingsFormPlace">
+          <select id="bookingsFormPlace"  onchange="bookingResourceSelectedHOME()">
             <option value="30" selected="selected">Club House</option>
             <option value="40">SUM</option>
           </select>

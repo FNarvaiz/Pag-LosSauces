@@ -136,10 +136,10 @@ function jBookingTypeOptions(neighborId, resourceId)
   JSONSend
 end function
 
-function jBookingStartOptions(neighborId, resourceId, bookingTypeId)
-  if isNull(resourceId) or (not isNull(neighborId) and isNull(bookingTypeId)) then
+function jBookingStartOptions(resourceId)
+  if isNull(resourceId) then
     JSONAddStr "bookingStartOptions", ""
-  elseif isNull(neighborId) or not isNull(bookingTypeId) then
+  else
     dim b: b = dbConnect
     dbGetData("SELECT DISTINCT ID, NOMBRE FROM RESERVAS_TURNOS(" & resourceId & ") ORDER BY ID")
     JSONAddArray "bookingStartOptions", rs.getRows, array("id", "name")

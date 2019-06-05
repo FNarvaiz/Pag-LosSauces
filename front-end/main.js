@@ -143,12 +143,7 @@ function hideChangePasswordDialog()
   if (ajaxBusy()) return;
   if (prevMainMenuSelectedOption) prevMainMenuSelectedOption.click();
 }
-function bookingResourceSelectedHOME()
-{
-        bookingResourceFieldChanged(30);
-    
-  
-}
+
 function comboBoxAppendOption(combobox, text, value)
 {
   var elOptNew = document.createElement('option');
@@ -577,6 +572,13 @@ function bodyResized()
     else
       main.style.top = "0px";
   }
+}
+function bookingResourceSelectedHOME()
+{
+  var placeId = document.getElementById("bookingsFormPlace").value;
+  bookingResourceFieldChanged(placeId);
+    
+  
 }
 
 

@@ -126,8 +126,7 @@ function handleCustomVerbs
   select case verb
     case "main": renderMain
     case "jBookingTypeOptions": jBookingTypeOptions getNumericParam("neighborId"), getNumericParam("bookingResourceId")
-    case "jBookingStartOptions": jBookingStartOptions getNumericParam("neighborId"), getNumericParam("bookingResourceId"), _
-      getNumericParam("bookingTypeId")
+    case "jBookingStartOptions": jBookingStartOptions  getNumericParam("bookingResourceId")
     case "jBookingDurationOptions": jBookingDurationOptions getNumericParam("neighborId"), getNumericParam("bookingResourceId"), _
       getNumericParam("bookingTypeId"), getNumericParam("bookingStart")
     case else

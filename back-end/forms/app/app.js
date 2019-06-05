@@ -232,7 +232,7 @@ function bookingTypeFieldChanged(formId, bookingTypeComboBox, bookingStartComboB
 {
   var neighborId = document.formResourceBookings.field2NewValue.value;
   var bookingResourceId = document.formResourceBookings.field3NewValue.value;
-  ajaxGetText(server + "?sessionId=" + sessionId + "&verb=jBookingStartOptions&neighborId=" + neighborId + "&bookingResourceId=" + bookingResourceId + "&bookingTypeId=" + bookingTypeComboBox.value, "", "",
+  ajaxGetText(server + "?sessionId=" + sessionId + "&verb=jBookingStartOptions&bookingResourceId=" + bookingResourceId , "", "",
     function() {
       eval("var response = " + ajaxResponseText);
       bookingStartComboBox.length = 1;
