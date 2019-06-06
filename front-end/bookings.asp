@@ -67,16 +67,30 @@ function renderBookings
           </select>
         </td>
       </tr>
-      <tr><td align="right" colspan="4" id="bookingsformNote"><br>La Administración se pondrá en contacto para confirmar la reserva.<br>
-        Opción Horario / Valores:<br>
- Martes a viernes: 16 a 20 hs.  $1.500.- Sin costo adicional.<br>
- 20 a 24 hs.  $2.000.- Mas $ 800.- del servicio de limpieza y control<br> 
- Viernes:  20 a 03 hs. $2.800.-  Mas $    1.000.- del servicio de limpieza y control  <br>
- Sábado:  13 a 17 hs. $2.500 sin costo adicional,<br>
- 17 a 21 hs. $2.500.-  Mas $     450.-  del servicio de limpieza y control<br>
- 21 a 01 hs. $2.800.-  Mas $     800.-  del servicio de limpieza y control<br>
- 21 a 03 hs. $3.200.-  Mas $   1.000.- del servicio de limpieza y control</td></tr> 
+     
     </table>
+    <div id="DescriptionBooking">
+      La Administración se pondrá en contacto para confirmar la reserva.<br>
+      <strong>LC= Servicio de limpieza y control</strong><br>
+      <strong>SCA= Sin costo adicional</strong><br>
+       <strong>-HOUSE</strong><br>
+Martes a viernes 16 a 20 hs.  $2.000. SCA <br>
+Martes a viernes 20 a 24 hs.  $2.500. +$ 900. LC <br>
+Viernes  20 a 03 hs. $3.200. +$1.100. LC <br>
+Sábado   13 a 17 hs. $3.000 SCA <br>
+Sábado   17 a 21 hs. $3.000. +$500. LC <br>
+Sábado   21 a 01 hs. $3.200. +$900. LC <br>
+Sábado   21 a 03 hs. $3.700. +$1.100. LC <br>
+Domingo 13 a 18 hs. $3.000. +$500. LC <br>
+
+ <strong>-QUINCHO</strong><br>
+Viernes 17 a 21 hs.  $1.500. SCA <br>
+Jueves a viernes 21 a 01 hs.  $2.000. +$900. LC <br>
+Viernes  21 a 03 hs. $2.200. +$1.100. LC <br>
+Sábado   21 a 01 hs. $2.200. +$900. LC <br>
+Sábado    21 a 03 hs. $2.500. +$1.100. LC 
+
+      </div>
   </div>
   <div id="bookingsStatusPanel">
     <div id="bookingsStatusTitle">ESTADO DE LAS RESERVAS

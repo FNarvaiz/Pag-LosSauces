@@ -8,6 +8,14 @@
 .redirect{
     display: none;
 }
+#DescriptionBooking{
+    padding-left: 14px;
+    height: 100px;
+    overflow-y: auto;
+}
+#bookingsformControls{
+    padding-bottom: 0px;
+}
 .buttonCancha{
         width: 100%;
         display: inline-block;
@@ -250,6 +258,10 @@ section.headerTable {
     #bookingsStatusPanel{width: 100%;}
 }
 @media (max-width: 950px) {
+     #DescriptionBooking{
+        height: auto;
+        padding: 10px;
+    }
     /*---------------------------------------------  HOME -------------------------------------- */
     .noView{
         display: inline-block;
